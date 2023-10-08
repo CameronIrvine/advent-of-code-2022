@@ -3,7 +3,7 @@ use std::collections::BinaryHeap;
 use crate::util;
 
 pub fn part1() {
-    let data = util::read_file_to_string("day_one.txt".to_string());
+    let data = util::read_file_to_string("day_1.txt".to_string());
     let mut counts: Vec<i32> = vec![];
     let mut curr_count = 0;
     for line in data {
@@ -19,7 +19,7 @@ pub fn part1() {
 }
 
 pub fn part2() {
-    let data = util::read_file_to_string("day_one.txt".to_string());
+    let data = util::read_file_to_string("day_1.txt".to_string());
     let mut heap: BinaryHeap<i32> = BinaryHeap::new();
     let mut curr_count = 0;
     for line in data {

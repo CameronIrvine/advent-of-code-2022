@@ -37,7 +37,7 @@ pub fn part1() {
         m
     }
 
-    let data = util::read_file_to_string("day_two.txt".to_string());
+    let data = util::read_file_to_string("day_2.txt".to_string());
     let mut score = 0;
     for line in data {
         let first_char = line.chars().nth(0).unwrap();
@@ -62,7 +62,7 @@ pub fn part2() {
         m
     }
 
-    let data = util::read_file_to_string("day_two.txt".to_string());
+    let data = util::read_file_to_string("day_2.txt".to_string());
     let mut score = 0;
     for line in data {
         let first_char = line.chars().nth(0).unwrap();
