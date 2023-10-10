@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use crate::util;
 
-pub fn part1() {
+pub fn solution() {
     let output = util::read_file_to_string("day_7.txt".to_string());
     let mut stack: Vec<String> = vec![];
     let mut dirs: HashMap<String, i32> = HashMap::new();
@@ -41,8 +41,16 @@ pub fn part1() {
         }
     }
     println!("Sum is {sum}");
-}
 
-// pub fn part2() {
-//     let data = util::read_file_to_string("day_7.txt".to_string());
-// }
+    // part 2
+    let fs_total_space = 70000000;
+    let used_space = dirs.get("/").unwrap();
+    let space_needed = (fs_total_space - used_space - 30000000).abs();
+    let deleted_dir_size = dirs
+        .iter()
+        .filter(|x| x.1 >= &space_needed)
+        .min_by(|a, b| a.1.cmp(b.1))
+        .map(|(_k, v)| v.to_string())
+        .unwrap();
+    println!("Size of directory to be deleted is {deleted_dir_size}");
+}
